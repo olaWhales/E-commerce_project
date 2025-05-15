@@ -20,6 +20,6 @@ jobs:
       - name: Set up JDK 17
         uses: actions/Setup-java@v1
         with:
-          java-version: 1.17
+          java-version: 17
       - name: Maven Package
         run: mvn -B clean package
