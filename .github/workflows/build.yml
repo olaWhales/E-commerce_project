@@ -1,26 +1,26 @@
-name: java CI with maven
-
-on:
-  push:
-    branches: ["main", "dev", "prod-support"]
-  pull_request:
-    branches: ["main", "dev", "prod-support"]
-
-
-
-jobs:
-
-
-  build:
-    name: Application Build
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v1
-      - name: Set up JDK 22
-        uses: actions/Setup-java@v1
-        with:
-          java-version: '22'
-      - name: Maven Package
-        run: mvn -B clean package
-
+#name: java CI with maven
+#
+#on:
+#  push:
+#    branches: ["main", "dev", "prod-support"]
+#  pull_request:
+#    branches: ["main", "dev", "prod-support"]
+#
+#
+#
+#jobs:
+#
+#
+#  build:
+#    name: Application Build
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - uses: actions/checkout@v1
+#      - name: Set up JDK 22
+#        uses: actions/Setup-java@v1
+#        with:
+#          java-version: '22'
+#      - name: Maven Package
+#        run: mvn -B clean package
+#
