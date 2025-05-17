@@ -19,6 +19,6 @@ jobs:
         uses: actions/Setup-java@v4
         with:
           java-version: 22
-          distribution: ''
+          distribution: 'temurin'
       - name: Maven Package
         run: mvn -B clean package
