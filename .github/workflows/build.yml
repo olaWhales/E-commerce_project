@@ -20,4 +20,4 @@ jobs:
         with:
           java-version: 22
       - name: Maven Package
-        run: mvn -b clean package
+        run: mvn -B clean package
