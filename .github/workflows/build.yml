@@ -14,10 +14,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
       - name: Set up JDK 22
-        uses: actions/Setup-java@v1
+        uses: actions/Setup-java@v4
         with:
           java-version: 22
+          distribution: ''
       - name: Maven Package
         run: mvn -B clean package
