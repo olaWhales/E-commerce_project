@@ -13,6 +13,7 @@ import org.example.services.usersRegistration.SellerService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 
 import java.math.BigDecimal;
 import java.util.Collections;
@@ -20,15 +21,10 @@ import java.util.Collections;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
+@ActiveProfiles("test")
 public class SellerTest {
     @Autowired
-    private SellerService sellerService;
-    @Autowired
-    private SellerRepository sellerRepository;
-    @Autowired
     private ProductService productsService;
-    @Autowired
-    private ProductRepository productRepository;
 
     @Test
     public void testToCreateProduct() {
