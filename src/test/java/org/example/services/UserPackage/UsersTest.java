@@ -40,7 +40,6 @@ public class UsersTest {
 
     @Test
     public void testThatUserCannotLoginAfterRegister(){
-        UsersResponse usersResponse = usersService.registerUser(new UsersRequest());
         Users users = new Users();
         users.setEmail("tutu@gmail.com");
         users.setPassword("6666");
@@ -51,13 +50,11 @@ public class UsersTest {
     }
     @Test
     public void thatThatUserCannotLoginWithWrongDetails(){
-        UsersResponse usersResponse = usersService.registerUser(new UsersRequest());
         Users users = new Users();
         users.setEmail("tutu@gmail.com");
         users.setPassword("6666");
         userRepository.save(users);
         UsersResponse usersResponse1 = usersService.loginUser("tutu@gmail.com", "1212");
-//        usersResponse1.setMessage("Login failed");
         assertEquals(usersResponse1.getMessage() , "Login failed");
     }
 }

@@ -41,8 +41,8 @@
 //    public void testThatOrderCanBeCreated() {
 //        OrderRequest orderRequest = new OrderRequest();
 //        Address address = new Address();
-//        address.setStreet(orderRequest.getAddress().getStreet());
-//        address.setCity(orderRequest.getAddress().getCity());
+////        address.setStreet(orderRequest.getAddress().getStreet());
+////        address.setCity(orderRequest.getAddress().getCity());
 //        addressRepository.save(address);
 //
 //        Buyer buyer = new Buyer();

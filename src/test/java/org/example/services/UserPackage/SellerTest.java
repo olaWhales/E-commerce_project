@@ -42,7 +42,6 @@ public class SellerTest {
     @Test
     public void testThatSellerCanLoginAfterRegister(){
         SellerResponse sellerResponse = sellerService.sellerRegister(new SellerRequest());
-        SellerRequest sellerRequest = new SellerRequest();
         Seller seller = new Seller();
         seller.setPassword("3333");
         seller.setEmail("david@gmail.com");
@@ -54,13 +53,11 @@ public class SellerTest {
 
     @Test
     public void testThatSellerCanLoginWithWrongPassword(){
-        SellerResponse sellerResponse = sellerService.sellerRegister(new SellerRequest());
         Seller seller = new Seller();
         seller.setPassword("3333");
         seller.setEmail("davids@gmail.com");
         sellerRepository.save(seller);
         SellerResponse sellerResponse1 = sellerService.sellerLogin("david@gmail.com", "3393");
-//        sellerResponse.setMessage("Login failed");
         assertEquals(sellerResponse1.getMessage() , "Login failed");
     }
 
