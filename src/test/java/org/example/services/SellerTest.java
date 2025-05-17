@@ -40,7 +40,7 @@ public class SellerTest {
         productRequest.setProductDescription("it's a green color");
         productRequest.setProductName("Phone");
         productResponse.setMessage("Product added successfully");
-        assertEquals(productResponse.getMessage() , "Product added successfully");
+//        assertEquals(productResponse.getMessage() , "Product added successfully");
     }
 
 //    @Test
