@@ -1,6 +1,7 @@
 org\example\services\UserPackage\DriverTest.class
 org\example\services\ReceiverTest.class
 org\example\services\UserPackage\BuyerTest.class
+org\example\services\SellerTest.class
 org\example\services\UserPackage\UsersTest.class
 org\example\services\UserPackage\SellerTest.class
 org\example\services\orderTestPackage\ProductsTest.class
