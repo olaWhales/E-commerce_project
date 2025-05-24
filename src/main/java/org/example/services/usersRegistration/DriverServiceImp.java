@@ -11,8 +11,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class DriverServiceImp implements DriverService {
 
-    @Autowired
-    private DriverRepository driverRepository;
+//    @Autowired
+    private final DriverRepository driverRepository;
+
+    public DriverServiceImp(DriverRepository driverRepository) {
+        this.driverRepository = driverRepository;
+    }
     @Autowired
     private VehicleRequest vehicleRequest;
 

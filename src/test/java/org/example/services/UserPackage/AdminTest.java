@@ -11,6 +11,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -28,15 +31,24 @@ public class AdminTest {
         AdminResponse adminResponse = adminService.adminRegister(new AdminRequest());
         AdminRequest adminRequest = new AdminRequest();
         Admin admin = new Admin();
-        admin.setFirstName(adminRequest.getFirstName());
-        admin.setLastName(adminRequest.getLastName());
-        admin.setEmail(adminRequest.getEmail());
-        admin.setPassword(adminRequest.getPassword());
-        admin.setContact(adminRequest.getContact());
-        admin.setBirthDate(adminRequest.getBirthDate());
-        admin.setDateCreated(adminRequest.getDateCreated());
-        admin.setRoles(adminRequest.getRoles());
-        admin.setPermission(adminRequest.getPermission());
+        adminRequest.setFirstName("ola");
+        adminRequest.setLastName("ola");
+        adminRequest.setEmail("ajadi@gmail.com");
+        adminRequest.setPassword("1111");
+        adminRequest.setContact("090");
+        adminRequest.setDateCreated(LocalDateTime.now());
+        adminRequest.setPermission("access");
+        adminRequest.setRoles("Driver");
+        adminRequest.setBirthDate(LocalDate.ofEpochDay(2002-10-10));
+//        admin.setFirstName(adminRequest.getFirstName());
+//        admin.setLastName(adminRequest.getLastName());
+//        admin.setEmail(adminRequest.getEmail());
+//        admin.setPassword(adminRequest.getPassword());
+//        admin.setContact(adminRequest.getContact());
+//        admin.setBirthDate(adminRequest.getBirthDate());
+//        admin.setDateCreated(adminRequest.getDateCreated());
+//        admin.setRoles(adminRequest.getRoles());
+//        admin.setPermission(adminRequest.getPermission());
         adminRepository.save(admin);
         adminResponse.setMessage("You have successfully registered!");
         assertEquals(adminResponse.getMessage(), "You have successfully registered!");
@@ -67,20 +79,4 @@ public class AdminTest {
         AdminResponse adminResponse1 = adminService.adminLogin("ajadi@gmail.com", "2233");
         assertEquals(adminResponse1.getMessage(), "Your account doesn't exist!");
     }
-//    @Test
-//    public void testThatAdminCanChangePassword(){
-//        AdminResponse adminResponse = adminService.adminRegister(new AdminRequest());
-//        AdminRequest adminRequest = new AdminRequest();
-//        Admin admin = new Admin();
-//        admin.setEmail("ajadi@gmail.com");
-//        admin.setPassword("1111");
-//        adminRepository.save(admin);
-//        AdminResponse adminResponse1 = adminService.adminLogin("ajadi@gmail.com", "1111");
-//        AdminResponse adminResponse2 = adminService.adminChangePassword(admin.getPassword());
-//        admin.setPassword("1112");
-////        adminResponse2.setMessage("change password successful");
-//        assertEquals(adminResponse2.getMessage(), "You have successfully changed your password!");
-//        Optional<Admin> admin1 = adminRepository.existByPassword("1112");
-//        assertTrue(admin1.isPresent());
-//    }
 }
